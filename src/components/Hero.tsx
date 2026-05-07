@@ -37,6 +37,42 @@ const SpinningCTA = () => (
   </motion.div>
 );
 
+const SocialStrip = () => {
+  const socials = [
+    { label: "GitHub", href: "https://github.com/SahilCodesfr" },
+    { label: "LinkedIn", href: "https://www.linkedin.com" },
+    { label: "Instagram", href: "https://www.instagram.com/demn.sahil" },
+    { label: "Email", href: "mailto:wwesahilsonkar@gmail.com" },
+  ];
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="absolute z-20 hidden md:flex flex-col items-center"
+      style={{ right: "64px", top: "112px", bottom: "194px", justifyContent: "center", gap: "1rem" }}
+    >
+      <span className="w-[1px] h-8 bg-white/30 flex-shrink-0" />
+      {socials.map(({ label, href }) => (
+        <a
+          key={label}
+          href={href}
+          target={href.startsWith("mailto") ? "_self" : "_blank"}
+          rel="noopener noreferrer"
+          title={label}
+          className="group flex-shrink-0"
+          style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+        >
+          <span className="font-sans font-black text-[10px] tracking-[0.22em] uppercase text-white group-hover:opacity-100 transition-opacity duration-300">
+            {label}
+          </span>
+        </a>
+      ))}
+      <span className="w-[1px] h-8 bg-white/30 flex-shrink-0" />
+    </motion.div>
+  );
+};
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-black text-white">
@@ -44,7 +80,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
         <SplashCursor />
       </div>
-
+      <SocialStrip />
       <div className="relative z-10 flex min-h-screen flex-col px-6 sm:px-8 md:px-12 pt-6 md:pt-7 pb-8">
         <div className="flex flex-col mt-24 md:mt-28">
           <p className="font-cinzel font-bold text-[13px] md:text-[15px] tracking-[0.08em] text-white mb-3 md:mb-4">
@@ -75,7 +111,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-14 md:mt-16 flex flex-col md:flex-row md:items-center md:justify-between divide-y divide-white/10 md:divide-y-0">
+        <div className="mt-14 md:mt-16 lg:mt-auto flex flex-col md:flex-row md:items-center md:justify-between divide-y divide-white/10 md:divide-y-0">
           <InfoItem
             icon={<MapPin className="h-7 w-7 text-hero-accent" strokeWidth={1.5} />}
             title="BASED IN KOLKATA"

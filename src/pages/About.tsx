@@ -78,10 +78,20 @@ const About = () => {
               {/* Job 1 */}
               <div>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                  Driven By Creativity
+                  • Driven By Creativity
                 </p>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
                   Passionate about web development, creativity, and building projects that solve real-world problems.
+                </p>
+              </div>
+              
+              {/* Job 2 */}
+              <div className="pt-4">
+                <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
+                  • Driven by Innovation
+                </p>
+                <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
+                  Dedicated to building modern web experiences, turning creative ideas into reality, and developing solutions that make an impact.
                 </p>
               </div>
 
@@ -99,7 +109,7 @@ const About = () => {
                   Modern Web Experiences
                 </p>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                  Designing web experiences that people don’t just use — they remember.
+                  Designing web experiences that people don’t just use , they remember.
                 </p>
               </div>
           </motion.div>
