@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════════════════
+   LoadingScreen.css — ported from Portfolio-Website-main
+   All class names prefixed with ls- to avoid collisions
+   ═══════════════════════════════════════════════════ */
+
+/* ── Full-screen overlay ─────────────────────────── */
+.ls-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  background-color: #eae5ec;
+  z-index: 999999999;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Header (logo + mini-game) ───────────────────── */
+.ls-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 1200px;
+  z-index: 9999999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px 0;
+  color: #0b080c;
+}
+
+.ls-logo-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #0b080c;
+  text-decoration: none;
+}
+.ls-logo-title span {
+  font-size: 9px;
+  font-weight: 500;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+/* ── Mini bouncing-ball game ─────────────────────── */
+.ls-loader-game {
+  overflow: hidden;
+}
+.ls-loader-game-container {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  transform: scale(0.4);
+  transform-origin: top right;
+  transition: opacity 0.3s;
+}
+.ls-loader-out .ls-loader-game-container {
+  opacity: 0;
+}
+.ls-loader-game-in {
+  width: 1200px;
+  position: absolute;
+  left: 0;
+  animation: ls-scroll-track 7s linear infinite;
+}
+
+@keyframes ls-scroll-track {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-300px); }
+}
+
+.ls-loader-game-line {
+  float: left;
+  margin: 0 20px 40px;
+  position: relative;
+  width: 10px;
+  height: 60px;
+  background-color: #000;
+  display: block;
+}
+.ls-loader-game-line:nth-child(2n) {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.ls-loader-game-ball {
+  position: absolute;
+  left: 20%;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #a87cff;
+  transform: translateY(70px);
+  animation: ls-ball-bounce 7s infinite;
+  animation-timing-function: cubic-bezier(0.3, 1.18, 0.63, 1.28);
+}
+
+@keyframes ls-ball-bounce {
+  0%  { transform: translateY(70px); }
+  15% { transform: translateY(10px); }
+  30% { transform: translateY(70px); }
+  45% { transform: translateY(10px); }
+  67% { transform: translateY(70px); }
+  80% { transform: translateY(10px); }
+  90% { transform: translateY(70px); }
+  100%{ transform: translateY(70px); }
+}
+
+/* ── Scrolling marquee ───────────────────────────── */
+.ls-marquee {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  color: #0b080c;
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ls-marquee-track {
+  display: inline-flex;
+  animation: ls-marquee-scroll 18s linear infinite;
+}
+.ls-marquee-track span {
+  padding: 0 50px;
+  position: relative;
+  flex-shrink: 0;
+}
+.ls-marquee-track span::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #0b080c;
+  position: absolute;
+  top: 50%;
+  border-radius: 50px;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ls-marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Loading pill / wrap ─────────────────────────── */
+.ls-wrap {
+  --ls-size: 145px;
+  padding: 6px;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 100px;
+  background-color: #000;
+  overflow: hidden;
+  transition: min-width 0.8s ease-in-out 0.2s,
+              min-height 0.8s ease-in-out 0.2s,
+              border-radius 0.8s ease-in-out 0.2s,
+              box-shadow 0.8s ease-in-out 0.2s;
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Expand to cover screen on click */
+.ls-clicked {
+  transition-delay: 0ms;
+  transition-timing-function: cubic-bezier(0.33, 0.11, 1, 0.72);
+  min-width: calc(100vw + 5000px);
+  border-radius: 5000px;
+  min-height: calc(100vh + 500px);
+  box-shadow: none;
+}
+
+/* ── Mouse-follow glow ───────────────────────────── */
+.ls-hover-glow {
+  background-color: #a87cff;
+  width: 250px;
+  height: 120px;
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 500ms;
+  pointer-events: none;
+}
+.ls-wrap:hover .ls-hover-glow {
+  opacity: 1;
+}
+.ls-clicked .ls-hover-glow,
+.ls-clicked:hover .ls-hover-glow {
+  opacity: 0;
+}
+
+/* ── Inner button ────────────────────────────────── */
+.ls-button {
+  padding: 20px 50px;
+  border-radius: 100px;
+  background-color: #000;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  z-index: 9;
+  color: #eae5ec;
+}
+
+/* White spotlight on hover */
+.ls-button::before {
+  content: "";
+  background-color: #fff;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 99;
+  filter: blur(60px);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 300ms;
+}
+.ls-wrap:hover .ls-button::before {
+  opacity: 1;
+}
+.ls-clicked .ls-button {
+  overflow: visible;
+}
+.ls-clicked .ls-button::before {
+  opacity: 0;
+}
+
+/* ── Progress text container ─────────────────────── */
+.ls-container {
+  position: absolute;
+  width: 100%;
+  max-width: var(--ls-size);
+  top: 50%;
+  left: 50px;
+  z-index: 9;
+  transform: translateY(-50%);
+  transition: max-width 1s;
+}
+.ls-complete .ls-container {
+  max-width: 0;
+}
+
+.ls-content {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.6s;
+  text-transform: uppercase;
+}
+.ls-content-in {
+  position: relative;
+  width: var(--ls-size);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #eae5ec;
+}
+.ls-content span {
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  color: #eae5ec;
+}
+
+/* Blinking cursor bar */
+.ls-box {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(100%, -50%);
+  width: 15px;
+  height: 25px;
+  background-color: white;
+  animation: ls-blink 1s linear infinite;
+}
+.ls-complete .ls-box {
+  animation: ls-blink-done 0.3s 1s forwards;
+  opacity: 1;
+}
+
+@keyframes ls-blink {
+  0%   { opacity: 0; }
+  25%  { opacity: 1; }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes ls-blink-done {
+  to { opacity: 0; }
+}
+
+/* ── "Welcome" text ──────────────────────────────── */
+.ls-content2 {
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: var(--ls-size);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  text-align: center;
+  transition: opacity 1s;
+  max-width: var(--ls-size);
+  color: #eae5ec;
+}
+.ls-clicked .ls-content2 {
+  opacity: 0;
+  overflow: visible;
+  transition: opacity 0.5s;
+}
+.ls-clicked .ls-content2 span {
+  transition: transform 1s, opacity 1s;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+/* ── Responsive tweaks ───────────────────────────── */
+@media (min-width: 500px) {
+  .ls-header {
+    padding: 20px 0;
+  }
+  .ls-logo-title {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .ls-header {
+    padding: 35px 0;
+  }
+  .ls-logo-title {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1400px) {
+  .ls-wrap {
+    --ls-size: 210px;
+  }
+  .ls-button {
+    padding: 30px 70px;
+    font-size: 25px;
+  }
+  .ls-container {
+    left: 70px;
+  }
+  .ls-marquee {
+    font-size: 100px;
+  }
+}
