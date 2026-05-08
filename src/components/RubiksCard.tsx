@@ -52,7 +52,7 @@ export default function RubiksCard({
     (async () => {
       const THREE = await import("three");
 
-      const SZ = 300;
+      const SZ = 280;
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
       renderer.setSize(SZ, SZ);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -149,8 +149,10 @@ export default function RubiksCard({
 
       <div style={s.card}>
         <div style={s.textBlock}>
-          <div style={s.firstName}>{firstName}</div>
-          <div style={s.lastName}>{lastName}</div>
+          <div style={s.nameWrapper}>
+            <div style={s.firstName}>{firstName}</div>
+            <div style={s.lastName}>{lastName}</div>
+          </div>
           <div style={s.locRow}>
             <svg
               width={14} height={14} viewBox="0 0 24 24" fill="none"
@@ -196,8 +198,8 @@ const s: Record<string, React.CSSProperties> = {
   },
 
   firstName: {
-    fontFamily: "'Inter',sans-serif",
-    fontStyle: "normal",
+    fontFamily: "'Playfair Display', serif",
+    fontStyle: "italic",
     fontWeight: 800,
     fontSize: 40,
     lineHeight: 1.05,
@@ -205,15 +207,21 @@ const s: Record<string, React.CSSProperties> = {
     letterSpacing: "-0.02em",
   },
 
+  nameWrapper: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px", // space between names
+  },
+
   lastName: {
     fontFamily: "'Playfair Display', serif",
     fontStyle: "italic",
-    fontWeight: 400,
-    fontSize: 32,
+    fontWeight: 800,
+    fontSize: 40,
     lineHeight: 1.05,
     color: "rgba(255,255,255,0.4)",
     letterSpacing: "-0.01em",
-    marginTop: 4,
+
   },
 
   locRow: {
@@ -238,7 +246,7 @@ const s: Record<string, React.CSSProperties> = {
     width: 260,
     height: 260,
     bottom: 20,
-    left: "38%",
+    left: "42%",
     top: "35%",
     transform: "translateX(-50%)",
     zIndex: 2,

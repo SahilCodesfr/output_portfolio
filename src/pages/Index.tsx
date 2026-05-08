@@ -130,7 +130,7 @@ const Index = () => {
           <SelectedWorks />
         </div>
 
-        <div className="bg-white text-black relative z-20">
+        <div className="bg-black text-white relative z-20">
           <VectorBridge />
         </div>
 

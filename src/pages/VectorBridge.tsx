@@ -158,13 +158,13 @@ const VectorBridge = () => {
 
                 const bOpacity = Math.max(0, 1 - e / 0.5);
                 box.style.borderWidth = bOpacity < 0.01 ? '0px' : '2px';
-                box.style.borderColor = `rgba(0,0,0,${bOpacity.toFixed(3)})`;
+                box.style.borderColor = `rgba(255,255,255,${bOpacity.toFixed(3)})`;
             }
         });
     });
 
     return (
-        <section ref={sectionRef} className="relative bg-white text-black" style={{ minHeight: '320vh' }}>
+        <section ref={sectionRef} className="relative bg-black text-white" style={{ minHeight: '320vh' }}>
             <div id="philosophy" style={{ position: 'absolute', top: '120vh', left: 0, height: '1px', width: '1px', pointerEvents: 'none' }} />
             <div
                 ref={svgContainerRef}
@@ -183,7 +183,7 @@ const VectorBridge = () => {
                     <path
                         ref={bridgeLineRef}
                         fill="none"
-                        stroke="#000"
+                        stroke="#fff"
                         strokeLinecap="round"
                         style={{
                             strokeWidth: isMobile ? '0.8vw' : '10px', // Mathematically matches SelectedWorks
@@ -202,8 +202,8 @@ const VectorBridge = () => {
                 height: `${RECT_H}px`,
                 marginLeft: `-${RECT_W / 2}px`,
                 marginTop: `-${RECT_H / 2}px`,
-                background: 'white',
-                border: '2px solid black',
+                background: 'black',
+                border: '2px solid white',
                 visibility: 'hidden',
                 opacity: 0,
                 zIndex: 50,
