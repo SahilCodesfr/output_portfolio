@@ -6,39 +6,39 @@ import './ScrollStack.css';
 const projects = [
   {
     id: "001",
-    title: "Enterprise Resource Architecture",
-    stack: "React / Node.js / Firebase / Firestore",
-    description: "A full-stack ERP engine automating multi-currency invoicing, inventory logic, and international tax compliance for distributed teams.",
-    links: { live: "https://erpbeta.netlify.app", code: "#" },
+    title: "PERFORMANCE FIRST",
+    stack: "Speed in Every Interaction",
+    description: "I focus on building websites that load fast and feel smooth from the first interaction. Performance is considered at every stage, from structure and assets to cocle quality and optimization, ensuring reliable results on real devices and networks.",
+    links: { live: "#", code: "#" },
     image: "/p1.png",
-    cta: "Live Project"
+    cta: "Connect with Me"
   },
   {
     id: "002",
-    title: "Geospatial Workforce Analytics",
-    stack: "React / Redux / Google Maps API/ Firebase",
-    description: "Real-time tracking system implementing location-based validation protocols and live route visualization for workforce monitoring.",
+    title: "CLEAN & SCALABLE CODE",
+    stack: "Engineered for Clean Growth",
+    description: "I write code that is clean, modular, and scalable, following best practices and design patterns. I prioritize maintainability and readability, ensuring that my code can be easily understood and extended by other developers.",
     links: { live: "#", code: "#" },
     image: "/p2.png",
-    cta: "Live Project"
+    cta: "Connect with Me"
   },
   {
     id: "003",
-    title: "OrderEase: Real-time online table food ordering system",
-    stack: "React / Firebase / Node.js",
-    description: "A real-time restaurant table ordering system that allows customers to place food orders directly from their table while enabling admins to manage menus, waiters, and assign waiters to customers for seamless service coordination.",
-    links: { live: "https://github.com/MAHESHPPAI/OrderEase", code: "#" },
+    title: "MODERN UI & UX",
+    stack: "Designed for Modern Experiences",
+    description: "I design and build interfaces with clarity, usability, and consistency in mind. Layouts, interactions, and responsive behavior are carefully crafted to provide an intuitive experience that works seamlessly across all devices and screen sizes.",
+    links: { live: "#", code: "#" },
     image: "./p3.png",
-    cta: "View on Github"
+    cta: "Connect with Me"
   },
   {
     id: "004",
-    title: "BusBuddy: Transit Management Logic",
-    stack: "React / Firebase / Springboot / ngrok",
-    description: "A real-time campus transportation platform that enables students to book seats and track buses live, drivers to stream GPS data during journeys, and transport officers to manage fleet availability, monitoring, and notifications seamlessly.",
-    links: { live: "https://github.com/MAHESHPPAI/Busbuddy-latest", code: "#" },
+    title: "RELIABLE DELIVERY",
+    stack: "Consistency You Can Count On",
+    description: "From the initial idea to the final launch, I focus on clear communication, thoughtful planning, and reliable delivery at every stage of the process. Each project is carefully tested and refined to ensure stability, quality, and confidence when the product goes live.",
+    links: { live: "#", code: "#" },
     image: "./p4.png",
-    cta: "View on Github"
+    cta: "Connect with Me"
   },
 ];
 
@@ -382,7 +382,7 @@ const SelectedWorks = () => {
           <div className="marquee-selected-works__track">
             {[0, 1, 2, 3].map((blockIndex) => (
               <div key={blockIndex} className="marquee-selected-works__segment" aria-hidden={blockIndex > 0 ? "true" : undefined}>
-                <span className="marquee-selected-works__text">Selected Works</span>
+                <span className="marquee-selected-works__text">How I Approach Every Project</span>
                 <span className="marquee-selected-works__dash">—</span>
               </div>
             ))}

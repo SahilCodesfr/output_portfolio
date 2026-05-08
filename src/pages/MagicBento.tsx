@@ -16,7 +16,7 @@ const MagicBento = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-40">
 
           <SwissItem
-            value={10}
+            value={5}
             suffix="+"
             label="Projects Completed"
             description="Completed multiple projects from concept to final implementation."
