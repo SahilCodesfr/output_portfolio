@@ -120,7 +120,7 @@ const Index = () => {
       {/* Content stack */}
       <div className="relative z-20 w-full bg-transparent">
         {/* Bento Info Section — black, sits between Hero and About */}
-        <div className="bg-black relative z-20">
+        <div className="bg-black relative z-20 md:hidden">
           <BentoSection />
         </div>
 
