@@ -2,6 +2,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SahilCodesfr)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://sahilcodesfr.vercel.app)
 
 A high-performance personal portfolio showcasing full-stack engineering expertise, architectural design, and a focus on transforming complex problems into elegant, automated solutions.
 
