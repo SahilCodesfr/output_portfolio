@@ -46,7 +46,7 @@ const About = () => {
           style={{ y: y1, opacity: opacity1 }}
         >
           <h2 className="font-sans text-xs md:text-sm font-bold uppercase tracking-widest">
-            Background & Data
+            Know About Me
           </h2>
         </motion.div>
 
@@ -56,14 +56,14 @@ const About = () => {
           {/* 01. EDUCATION */}
           <motion.div style={{ y: y2, opacity: opacity2 }} className="flex flex-col gap-2">
             <h3 className="font-sans text-xs md:text-sm font-bold uppercase tracking-wide opacity-100 mb-1">
-              01. Education
+              01. My Creative Side
             </h3>
             <div className="flex flex-col">
               <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                Jadavpur University, West Bengal
+                Building Ideas Into Real Things
               </p>
               <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                B.Tech, Computer Science & Engineering (2026–2030)
+                I turn ideas into real working projects.
               </p>
             </div>
           </motion.div>
