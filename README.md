@@ -1,8 +1,7 @@
-# MAHESH P PAI — Portfolio
+# SAHIL SONKAR — Portfolio
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahesh-p-pai-b0987b2a8/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MAHESHPPAI)
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://maheshppai-v1.netlify.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SahilCodesfr)
 
 A high-performance personal portfolio showcasing full-stack engineering expertise, architectural design, and a focus on transforming complex problems into elegant, automated solutions.
 
@@ -56,7 +55,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/MAHESHPPAI/portfolio-website.git
+   git clone https://github.com/SahilCodesfr/output_portfolio.git
    cd Portfolio-website
    ```
 
@@ -83,12 +82,12 @@ src/
 
 Let's build something intelligent.
 
-- **Email**: [maheshpailinked@gmail.com](mailto:maheshpailinked@gmail.com)
-- **Instagram**: [_.maheshhhhhh._](https://www.instagram.com/_.maheshhhhhh._/)
+- **Email**: [wwesahilsonkar@gmail.com](mailto:wwesahilsonkar@gmail.com)
+- **Instagram**: [demn.sahil](https://www.instagram.com/demn.sahil)
 - **Availability**: Currently available for freelance and full-time opportunities.
 
 ---
 
 <p align="center">
-  MADE BY MAHESH ® 2026
+  MADE BY SAHIL ® 2026
 </p>

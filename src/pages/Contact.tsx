@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6_hmNogiRhIAkAdfWU9q0wQb2WdEvswPCTHCd9U-giehtMTgKcmZq2NsQES-XYuxd/exec";
+const FORM_ENDPOINT = "https://formspree.io/f/mbdwzarl";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,22 +26,25 @@ const Contact = () => {
     setStatus("sending");
 
     try {
-      // ✅ Send as URLSearchParams — no-cors mode drops JSON headers,
-      //    but form-encoded bodies are always forwarded correctly.
-      const body = new URLSearchParams(formData);
+  const response = await fetch(FORM_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
 
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
+  if (response.ok) {
+    setStatus("success");
+    setFormData({ firstName: "", lastName: "", email: "", subject: "", message: "" });
+  } else {
+    setStatus("error");
+  }
+} catch {
+  setStatus("error");
+}
 
-      setStatus("success");
-      setFormData({ firstName: "", lastName: "", email: "", subject: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
   };
 
   const containerVariants = {
